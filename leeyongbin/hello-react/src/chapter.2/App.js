@@ -82,6 +82,7 @@ function App() {
     //2.4.7 class 대신 className
     // const name = '리액트';
     // return <div className='react'>{name}</div> // react에서는 class명시를 className으로 명시한다.
+    
 }
 
 export default App;
