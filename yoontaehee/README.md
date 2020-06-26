@@ -9,7 +9,7 @@
 ## 1주차      
          
 1장 리액트 시작:white_check_mark:     
-2장 JSX     
+2장 JSX:white_check_mark:         
 3장 컴포넌트     
 4장 이벤트 핸들링     
 ## 2주차          
