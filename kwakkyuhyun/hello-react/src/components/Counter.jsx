@@ -12,7 +12,7 @@ class Counter extends Component {
     render() {
         const { number, fixedNumber } = this.state;
         return (
-            <div className={styles.wrap}>
+            <section className={styles.section}>
                 <h2 className={styles.title}>숫자 카운터</h2>
                 <div className={styles.count}>{number}</div>
                 <div className={styles.fixed_count}>{fixedNumber}</div>
@@ -32,7 +32,7 @@ class Counter extends Component {
                 >
                     +1
                 </button>
-            </div>
+            </section>
         );
     }
 }

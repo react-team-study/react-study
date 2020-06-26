@@ -12,11 +12,16 @@ class MyComponent extends Component {
     render() {
         const { name, children, favoriteNumber } = this.props;
         return (
-            <h1 className={styles.title}>
-                안녕하세요, 제 이름은 {name}입니다. <br />
-                children 값은 {children}입니다. <br />
-                제일 좋아하는 숫자는 {favoriteNumber}입니다.
-            </h1>
+            <header className={styles.header}>
+                <h1 className={styles.title}>
+                    React Component
+                </h1>
+                <p className={styles.desc}>
+                    안녕하세요, 제 이름은 {name}입니다. <br />
+                    children 값은 {children}입니다. <br />
+                    제일 좋아하는 숫자는 {favoriteNumber}입니다.
+                </p>
+            </header>
         )
     }
 }
