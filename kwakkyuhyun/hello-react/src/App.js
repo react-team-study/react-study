@@ -4,6 +4,7 @@ import MyComponent from './components/MyComponent';
 import Counter from './components/Counter';
 import Say from './components/Say';
 import EventPractice from './components/EventPractice';
+import ValidationSample from './components/ValidationSample';
 
 class App extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
                 <Counter />
                 <Say />
                 <EventPractice />
+                <ValidationSample />
             </>
         )
     }

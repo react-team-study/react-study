@@ -1,4 +1,5 @@
-import React, { Component, useState } from 'react';
+// import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styles from './EventPractice.module.scss';
 
 // 클래스형 컴포넌트
