@@ -1,0 +1,14 @@
+import React,{useState} from 'react';
+
+const Counter = () => {
+    const[value,setValue] = useState('');
+    return (
+        <div>
+            <p>{value}</p>
+            <button onClick={() => setValue(value-1)}>-1</button>
+            <button onClick={() => setValue(value+1)}>+1</button>
+        </div>
+    )
+}
+
+export default Counter;

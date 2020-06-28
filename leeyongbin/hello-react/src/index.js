@@ -11,7 +11,12 @@ import './index.css';
 
 /* chapter.4 */
 //import App from './chapter.4/class/EventPractice';
-import App from './chapter.4/func/EventPractice';
+//import App from './chapter.4/func/EventPractice';
+
+/* chapter.5 */
+//import App from './chapter.5/class/App';
+import App from './App';
+
 
 import * as serviceWorker from './serviceWorker';
 
