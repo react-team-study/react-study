@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import '../scss/utils';
+
+.section {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(#000, 0.3);
+}
+
+.title {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.failure {
+    background-color: lightcoral;
+}
+
+.input {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgba(#000, 0.2);
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.desc {
+    padding-top: 10px;
+    font-size: 18px;
+}

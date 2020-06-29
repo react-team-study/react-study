@@ -1,9 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+/* chapter.2 */
 // import App from './chapter.2//App'; //chapter.2
-import App from './chapter.3/func/App'; //chapter.3 함수형 컴포넌트
+
+/* chapter.3 */
+// import App from './chapter.3/func/App'; //chapter.3 함수형 컴포넌트
 //import App from './chapter.3/class/App'; //chapter.3 함수형 컴포넌트
+
+/* chapter.4 */
+//import App from './chapter.4/class/EventPractice';
+//import App from './chapter.4/func/EventPractice';
+
+/* chapter.5 */
+//import App from './chapter.5/class/App';
+import App from './App';
+
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
