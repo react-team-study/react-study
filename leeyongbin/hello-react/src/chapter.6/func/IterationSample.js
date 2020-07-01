@@ -33,6 +33,7 @@ const IterationSample = () => {
         { id : 3, text : '눈'},
         { id : 4, text : '비'},
     ]);
+    
     const [inputText, setInputText] = useState('');
     const [nextId, setNextId] = useState(5);
 
