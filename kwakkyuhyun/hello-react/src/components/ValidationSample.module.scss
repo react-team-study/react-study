@@ -14,10 +14,18 @@
 
 .success {
     background-color: lightgreen;
+    
+    &:focus {
+        outline: 5px solid #19ce60;
+    }
 }
 
 .failure {
     background-color: lightcoral;
+    
+    &:focus {
+        outline: 5px solid #f4361e;
+    }
 }
 
 .input {

@@ -5,6 +5,7 @@ import Counter from './components/Counter';
 import Say from './components/Say';
 import EventPractice from './components/EventPractice';
 import ValidationSample from './components/ValidationSample';
+import ScrollBox from './components/ScrollBox';
 
 class App extends Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
                 <Say />
                 <EventPractice />
                 <ValidationSample />
+                <ScrollBox />
             </>
         )
     }
