@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import '../scss/utils';
+
+.section {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(#000, 0.3);
+}
+
+.title {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.list {
+    padding: 20px 0;
+    border: 1px solid #999;
+    max-width: 240px;
+    margin: 20px auto 0;
+    text-align: left;
+}
+
+.item {
+    @include ellipsis;
+    
+    font-size: 18px;
+    position: relative;
+    padding: 0 40px;
+    
+    & + & {
+        margin-top: 20px;
+    }
+    
+    &:hover {
+        & .delete {
+            display: inline-block;
+        }
+    }
+}
+
+.input {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid rgba(#000, 0.2);
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.delete {
+    display: none;
+    position: absolute;
+    top: -3px;
+    right: 20px;
+    padding: 5px;
+    color: #aaa;
+}
