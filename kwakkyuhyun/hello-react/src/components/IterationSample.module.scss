@@ -15,7 +15,7 @@
 .list {
     padding: 20px 0;
     border: 1px solid #999;
-    max-width: 240px;
+    max-width: 320px;
     margin: 20px auto 0;
     text-align: left;
 }
@@ -32,9 +32,7 @@
     }
     
     &:hover {
-        & .delete {
-            display: inline-block;
-        }
+        font-weight: bold;
     }
 }
 
@@ -52,10 +50,10 @@
 }
 
 .delete {
-    display: none;
     position: absolute;
+    font-size: 16px;
     top: -3px;
     right: 20px;
     padding: 5px;
-    color: #aaa;
+    color: #999;
 }
