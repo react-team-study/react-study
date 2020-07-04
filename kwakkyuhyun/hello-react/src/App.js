@@ -7,15 +7,29 @@ import EventPractice from './components/EventPractice';
 import ValidationSample from './components/ValidationSample';
 import ScrollBox from './components/ScrollBox';
 import IterationSample from './components/IterationSample';
+import LifeCycleSample from './components/LifeCycleSample';
+import ErrorBoundary from './components/ErrorBoundary';
+
+function getRandomColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            color: '#000',
         }
     }
+    
+    handleClick = () => {
+        this.setState({
+            color: getRandomColor(),
+        })
+    }
+    
     render() {
+        const { color } = this.state;
         return (
             <>
                 <MyComponent name={'곽규현'} favoriteNumber={3}>리액트</MyComponent>
@@ -25,6 +39,16 @@ class App extends Component {
                 <ValidationSample />
                 <ScrollBox />
                 <IterationSample />
+                <ErrorBoundary>
+                    <LifeCycleSample color={color} />
+                    <button
+                        type="button"
+                        onClick={this.handleClick}
+                        style={{ fontSize: '18px', width: '100px', display: 'block', margin: '-10px auto', padding: '10px' }}
+                    >
+                        색상변경
+                    </button>
+                </ErrorBoundary>
             </>
         )
     }

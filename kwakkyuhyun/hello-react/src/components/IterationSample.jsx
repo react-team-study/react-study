@@ -23,7 +23,6 @@ class IterationSample extends Component {
     onClick = () => {
         const addName = this.state.list.concat({ id: this.state.list.length, name: this.state.inputText });
         this.setState({ list: addName, inputText: '' });
-        
     }
     
     onRemove = idx => {
