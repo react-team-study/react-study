@@ -10,13 +10,14 @@
 1장 리액트 시작 :white_check_mark:     
 2장 JSX :white_check_mark:     
 3장 컴포넌트 :white_check_mark:    
-4장 이벤트 핸들링     
+4장 이벤트 핸들링 :white_check_mark:      
 
 ## 2주차          
-5장 ref:DOM에 이름 달기     
+5장 ref:DOM에 이름 달기 :white_check_mark:        
 6장 컴포넌트 반복     
 7장 컴포넌트의 라이프사이클 메서드      
 8장 Hooks           
+
 ## 3주차        
 9장 컴포넌트 스타일링    
 10장 일정 관리 웹 애플리케이션 만들기     
