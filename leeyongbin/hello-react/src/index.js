@@ -15,8 +15,10 @@ import './index.css';
 
 /* chapter.5 */
 //import App from './chapter.5/class/App';
-import App from './App';
+//import App from './App';
 
+/*chapter.8 */
+import App from './chapter.8/App';
 
 import * as serviceWorker from './serviceWorker';
 
