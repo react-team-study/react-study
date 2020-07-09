@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import styles from './CounterUsingHook.module.scss';
+import BaseLayout from './BaseLayout';
 
 function reducer(state, action) {
     switch (action.type) {
@@ -15,8 +16,7 @@ function reducer(state, action) {
 const CounterUsingHook = () => {
     const [ state, dispatch ] = useReducer(reducer, { value: 0 });
     return (
-        <section className={styles.section}>
-            <h2 className={styles.title}>Hook</h2>
+        <BaseLayout title={'Hook'}>
             <p className={styles.desc}>
                 현재 카운터 값은 <strong>{state.value}</strong>입니다.
             </p>
@@ -26,7 +26,7 @@ const CounterUsingHook = () => {
             <button type="button" className={styles.button} onClick={() => dispatch({ type: 'DECREMENT' })}>
                 -1
             </button>
-        </section>
+        </BaseLayout>
     );
 };
 

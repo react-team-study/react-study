@@ -1,6 +1,7 @@
 // import React, { Component } from 'react';
 import React, { useState } from 'react';
 import styles from './EventPractice.module.scss';
+import BaseLayout from './BaseLayout';
 
 // 클래스형 컴포넌트
 // class EventPractice extends Component {
@@ -100,8 +101,7 @@ const EventPractice = () => {
     }
     
     return (
-        <section className={styles.section}>
-            <h2 className={styles.title}>Event Practice</h2>
+        <BaseLayout title={'Event Practice'}>
             <input
                 type="text"
                 className={styles.input}
@@ -126,7 +126,7 @@ const EventPractice = () => {
             >
                 확인
             </button>
-        </section>
+        </BaseLayout>
     )
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './LifeCycleSample.module.scss';
+import BaseLayout from './BaseLayout';
 
 class LifeCycleSample extends Component {
     state = {
@@ -64,13 +65,12 @@ class LifeCycleSample extends Component {
         const { number, color } = this.state;
         
         return (
-            <section className={styles.section}>
+            <BaseLayout title={'LifeCycle'} type_noneBorder={true}>
                 {/* {this.props.missing.value} */}
-                <h2 className={styles.title}>LifeCycle</h2>
                 <div className={styles.number} style={style} ref={(ref) => this.myRef = ref}>{number}</div>
                 <p className={styles.color}>color: {color}</p>
                 <button type="button" className={styles.button} onClick={this.handleClick}>더하기</button>
-            </section>
+            </BaseLayout>
         );
     }
 }

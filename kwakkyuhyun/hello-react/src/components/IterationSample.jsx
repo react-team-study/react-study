@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './IterationSample.module.scss';
+import BaseLayout from './BaseLayout';
 
 class IterationSample extends Component {
     constructor(props) {
@@ -33,8 +34,7 @@ class IterationSample extends Component {
     render() {
         const { list, inputText } = this.state;
         return (
-            <section className={styles.section}>
-                <h2 className={styles.title}>Iteration Sample</h2>
+            <BaseLayout title={'Iteration Sample'}>
                 <input
                     type="text"
                     className={styles.input}
@@ -64,7 +64,7 @@ class IterationSample extends Component {
                         )
                     })}
                 </ul>
-            </section>
+            </BaseLayout>
         );
     }
 }

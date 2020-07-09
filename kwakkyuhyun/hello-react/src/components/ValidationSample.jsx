@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './ValidationSample.module.scss';
 import classnames from 'classnames';
+import BaseLayout from './BaseLayout';
 
 class ValidationSample extends Component {
     constructor(props) {
@@ -29,8 +30,7 @@ class ValidationSample extends Component {
     render() {
         const { password, clicked, validated } = this.state;
         return (
-            <section className={styles.section}>
-                <h2 className={styles.title}>Validation</h2>
+            <BaseLayout title={'Validation'}>
                 <input
                     type="password"
                     ref={ref => { this.input = ref }}
@@ -48,7 +48,7 @@ class ValidationSample extends Component {
                 <p className={styles.desc}>
                     {clicked ? validated ? '비밀번호가 일치합니다 :)' : '비밀번호가 일치하지 않습니다 :(' : '비밀번호를 입력해주세요'}
                 </p>
-            </section>
+            </BaseLayout>
         );
     }
 }

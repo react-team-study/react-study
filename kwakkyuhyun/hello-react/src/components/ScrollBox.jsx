@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './ScrollBox.module.scss';
+import BaseLayout from './BaseLayout';
 
 class ScrollBox extends Component {
     scrollToBottom = () => {
@@ -8,8 +9,7 @@ class ScrollBox extends Component {
     }
     render() {
         return (
-            <section className={styles.section}>
-                <h2 className={styles.title}>Ref 사용</h2>
+            <BaseLayout title={'Ref 사용'}>
                 <div className={styles.box} ref={ref => this.box = ref}>
                     <div className={styles.box_inner} />
                 </div>
@@ -20,7 +20,7 @@ class ScrollBox extends Component {
                 >
                     맨 밑으로
                 </button>
-            </section>
+            </BaseLayout>
         );
     }
 }

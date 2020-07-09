@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Say.module.scss';
+import BaseLayout from './BaseLayout';
 
 const Say = () => {
     const [ message, setMessage ] = useState('');
@@ -8,8 +9,7 @@ const Say = () => {
     
     const [ color, setColor ] = useState('black');
     return (
-        <section className={styles.section}>
-            <h2 className={styles.title}>useState사용</h2>
+        <BaseLayout title={'useState 사용'}>
             <button type="button" className={styles.button_control} onClick={onClickEnter}>입장</button>
             <button type="button" className={styles.button_control} onClick={onClickLeave}>퇴장</button>
             <strong className={styles.message}style={{ color }}>{message}</strong>
@@ -43,7 +43,7 @@ const Say = () => {
             }>
                 파란색
             </button>
-        </section>
+        </BaseLayout>
     );
 }
 

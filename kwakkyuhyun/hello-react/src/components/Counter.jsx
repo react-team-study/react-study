@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Counter.module.scss';
+import BaseLayout from './BaseLayout';
 
 class Counter extends Component {
     constructor(props) {
@@ -12,8 +13,7 @@ class Counter extends Component {
     render() {
         const { number, fixedNumber } = this.state;
         return (
-            <section className={styles.section}>
-                <h2 className={styles.title}>숫자 카운터</h2>
+            <BaseLayout title={'숫자 카운터'}>
                 <div className={styles.count}>{number}</div>
                 <div className={styles.fixed_count}>{fixedNumber}</div>
                 <button
@@ -32,7 +32,7 @@ class Counter extends Component {
                 >
                     +1
                 </button>
-            </section>
+            </BaseLayout>
         );
     }
 }
