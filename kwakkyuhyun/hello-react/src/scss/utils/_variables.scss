@@ -2,3 +2,10 @@
 
 $font-default: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Apple SD Gothic Neo', 'Arial',
                 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', sans-serif;
+
+$breakpoints: (
+    mobile-min: 320px,
+    mobile: 375px,
+    tablet: 768px,
+    pc: 1024px,
+) !global;

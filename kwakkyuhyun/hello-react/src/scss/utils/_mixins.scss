@@ -18,3 +18,17 @@
         -webkit-box-orient: vertical;
     }
 }
+
+@mixin media($breakpoint) {
+    $get-breakpoint: map-get($breakpoints, $breakpoint);
+    @if($breakpoint == mobile-min) {
+        @media all and (max-width: $get-breakpoint) {
+            @content;
+        }
+    }
+    @else {
+        @media all and (min-width: $get-breakpoint) {
+            @content;
+        }
+    }
+}
