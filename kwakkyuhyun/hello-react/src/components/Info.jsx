@@ -1,30 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Info.module.scss';
 import BaseLayout from './BaseLayout';
+import useInput from './useInput';
 
 const Info = () => {
-    const [ name, setName ] = useState('');
-    const [ nickname, setNickname ] = useState('');
+    const [ state, onChange ] = useInput({ name: '', nickname: '', })
     const [ visible, setVisible ] = useState(false);
+    const { name, nickname } = state;
     
-    // useEffect => 렌더링 된 직후 실행
-    // 2번째 인자로 빈배열[] 넘겨주면 마운트 될 때만 실행
-    // [특정값]을 넣어주면 특정값이 변경될때만 실행
-    useEffect(() => {
-        console.log('useEffect');
-        return () => {
-            console.log('cleanup');
-            console.log(name);
-        }
-    }, [name]);
-    
-    const onChangeName = e => {
-        setName(e.target.value);
-    };
-    
-    const onChangeNickname = e => {
-        setNickname(e.target.value);
-    };
+    // // useEffect => 렌더링 된 직후 실행
+    // // 2번째 인자로 빈배열[] 넘겨주면 마운트 될 때만 실행
+    // // [특정값]을 넣어주면 특정값이 변경될때만 실행
+    // useEffect(() => {
+    //     console.log('useEffect');
+    //     return () => {
+    //         console.log('cleanup');
+    //         console.log(name);
+    //     }
+    // }, [name]);
     
     const onChangeVisible = () => {
         if(visible) {
@@ -45,15 +38,17 @@ const Info = () => {
                     <input
                         type="text"
                         className={styles.input}
+                        name="name"
                         value={name}
-                        onChange={onChangeName}
+                        onChange={onChange}
                         placeholder="이름을 입력해주세요."
                     />
                     <input
                         type="text"
                         className={styles.input}
+                        name="nickname"
                         value={nickname}
-                        onChange={onChangeNickname}
+                        onChange={onChange}
                         placeholder="닉네임을 입력해주세요."
                     />
                     <strong className={styles.text}>이름: {name}</strong>

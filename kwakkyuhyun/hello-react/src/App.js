@@ -11,6 +11,7 @@ import LifeCycleSample from './components/LifeCycleSample';
 import ErrorBoundary from './components/ErrorBoundary';
 import CounterUsingHook from './components/CounterUsingHook';
 import Info from './components/Info';
+import Average from './components/Average';
 
 function getRandomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -53,6 +54,7 @@ class App extends Component {
                 </ErrorBoundary>
                 <CounterUsingHook />
                 <Info />
+                <Average />
             </>
         )
     }
