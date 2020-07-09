@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './MyComponent.module.scss';
+import styles from './MyComponent.scss';
 
 class MyComponent extends Component {
     constructor(props) {

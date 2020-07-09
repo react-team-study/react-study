@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Counter.module.scss';
+import styles from './Counter.scss';
 import BaseLayout from './BaseLayout';
 
 class Counter extends Component {

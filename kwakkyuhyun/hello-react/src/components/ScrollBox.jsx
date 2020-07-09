@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './ScrollBox.module.scss';
+import styles from './ScrollBox.scss';
 import BaseLayout from './BaseLayout';
 
 class ScrollBox extends Component {

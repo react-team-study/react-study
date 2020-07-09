@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Say.module.scss';
+import styles from './Say.scss';
 import BaseLayout from './BaseLayout';
 
 const Say = () => {

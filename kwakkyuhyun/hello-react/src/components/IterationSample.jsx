@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './IterationSample.module.scss';
+import styles from './IterationSample.scss';
 import BaseLayout from './BaseLayout';
 
 class IterationSample extends Component {

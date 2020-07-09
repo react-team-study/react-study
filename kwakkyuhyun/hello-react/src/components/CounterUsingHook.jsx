@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import styles from './CounterUsingHook.module.scss';
+import styles from './CounterUsingHook.scss';
 import BaseLayout from './BaseLayout';
 
 function reducer(state, action) {

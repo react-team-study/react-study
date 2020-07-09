@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './ValidationSample.module.scss';
+import styles from './ValidationSample.scss';
 import classnames from 'classnames';
 import BaseLayout from './BaseLayout';
 

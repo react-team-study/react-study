@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Info.module.scss';
+import styles from './Info.scss';
 import BaseLayout from './BaseLayout';
 import useInput from './useInput';
 

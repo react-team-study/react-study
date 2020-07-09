@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './LifeCycleSample.module.scss';
+import styles from './LifeCycleSample.scss';
 import BaseLayout from './BaseLayout';
 
 class LifeCycleSample extends Component {

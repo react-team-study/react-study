@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from './BaseLayout.module.scss';
+import styles from './BaseLayout.scss';
 
 const BaseLayout = (props) => {
     const { title, type_noneBorder = false, children } = props;

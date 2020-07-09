@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
-import styles from './Average.module.scss';
+import styles from './Average.scss';
 import BaseLayout from './BaseLayout';
 
 const getAverage = numbers => {
