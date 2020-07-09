@@ -14,14 +14,14 @@ class ErrorBoundary extends Component {
     
     render() {
         return (
-            <>
-            {this.state.error ? (
-                <div>에러가 발생했습니다!</div>
-            ) : (
-                this.props.children
-            )
-            }
-            </>
+            <div style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.3)', paddingBottom: '20px', }}>
+                {this.state.error ? (
+                    <div>에러가 발생했습니다!</div>
+                ) : (
+                    this.props.children
+                )
+                }
+            </div>
         );
     }
 }

@@ -9,6 +9,8 @@ import ScrollBox from './components/ScrollBox';
 import IterationSample from './components/IterationSample';
 import LifeCycleSample from './components/LifeCycleSample';
 import ErrorBoundary from './components/ErrorBoundary';
+import CounterUsingHook from './components/CounterUsingHook';
+import Info from './components/Info';
 
 function getRandomColor() {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -49,6 +51,8 @@ class App extends Component {
                         색상변경
                     </button>
                 </ErrorBoundary>
+                <CounterUsingHook />
+                <Info />
             </>
         )
     }

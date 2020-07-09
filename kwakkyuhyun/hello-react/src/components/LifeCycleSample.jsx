@@ -65,7 +65,7 @@ class LifeCycleSample extends Component {
         
         return (
             <section className={styles.section}>
-                {this.props.missing.value}
+                {/* {this.props.missing.value} */}
                 <h2 className={styles.title}>LifeCycle</h2>
                 <div className={styles.number} style={style} ref={(ref) => this.myRef = ref}>{number}</div>
                 <p className={styles.color}>color: {color}</p>
