@@ -4,8 +4,11 @@ import React, { Component } from "react";
 // import EventSample from "./chapter4/EventSample";
 // import EventSampleFunc from "./chapter4/EventSampleFunc";
 // import EventSampleFunc2 from "./chapter4/EventSampleFunc2";
-import ValidationSample from "./chapter5/ValidationSample";
-import ScrollBox from "./chapter5/ScrollBox";
+// import ValidationSample from "./chapter5/ValidationSample";
+// import ScrollBox from "./chapter5/ScrollBox";
+// import IterationSample from "./chapter6/IterationSample";
+// import IteratorSampleAddKey from "./chapter6/IteratorSampleAddKey";
+import IteratorSampleAdv from "./chapter6/IteratorSampleAdv";
 
 // function App() {
 //   return <ValidationSample />;
@@ -13,19 +16,7 @@ import ScrollBox from "./chapter5/ScrollBox";
 
 class App extends Component {
   render() {
-    // return <ValidationSample />;
-    return (
-      <div>
-        <ScrollBox
-          ref={(ref) => {
-            this.scrollbox = ref;
-          }}
-        />
-        <button onClick={() => this.scrollbox.scrollToBottom()}>
-          맨 밑으로
-        </button>
-      </div>
-    );
+    return <IteratorSampleAdv />;
   }
 }
 
