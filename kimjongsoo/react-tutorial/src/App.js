@@ -8,15 +8,44 @@ import React, { Component } from "react";
 // import ScrollBox from "./chapter5/ScrollBox";
 // import IterationSample from "./chapter6/IterationSample";
 // import IteratorSampleAddKey from "./chapter6/IteratorSampleAddKey";
-import IteratorSampleAdv from "./chapter6/IteratorSampleAdv";
+// import IteratorSampleAdv from "./chapter6/IteratorSampleAdv";
+import LifeCycleSample from "./chapter7/LifeCycleSample";
+import ErrorBoundary from "./chapter7/ErrorBoundary";
 
 // function App() {
 //   return <ValidationSample />;
 // }
 
+// class App extends Component {
+//   render() {
+//     return <LifeCycleSample />;
+//   }
+// }
+
+function getRandomColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}
+
 class App extends Component {
+  state = {
+    color: "#000000",
+  };
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor(),
+    });
+  };
+
   render() {
-    return <IteratorSampleAdv />;
+    return (
+      <div>
+        <button onClick={this.handleClick}>Color</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
+      </div>
+    );
   }
 }
 
