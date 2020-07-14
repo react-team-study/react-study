@@ -28,12 +28,24 @@ const TodoTemplate = () => {
         setTodos(todos.concat(todo));
     }, [todos]);
     
+    const onRemove = useCallback(idx => {
+        setTodos(todos.filter((todo, index) => idx !== index));
+    }, [todos]);
+    
+    const onToggle = useCallback(idx => {
+        setTodos(
+            todos.map((todo, index) => 
+                index === idx ? { ...todo, complete: !todo.complete } : todo,
+            )
+        );
+    }, [todos]);
+    
     return (
         <div className={styles.wrap}>
             <div role="main" id="content" className={styles.content}>
                 <h1 className={styles.title}>일정 관리</h1>
                 <TodoInsert onInsert={onInsert} />
-                <TodoList todos={todos} />
+                <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
             </div>
         </div>
     );
