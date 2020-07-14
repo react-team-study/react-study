@@ -23,6 +23,7 @@ const TodoInsert = ({ onInsert }) => {
                 value={value}
                 onChange={onChange}
                 placeholder="할 일을 입력해주세요"
+                required
             />
             <button type="submit" className={styles.button}>
                 <MdAdd />
