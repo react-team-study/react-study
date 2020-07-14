@@ -1,0 +1,35 @@
+@charset "utf-8";
+@import '../scss/utils';
+
+.form {
+    display: flex;
+    background-color: #495057;
+    height: 60px;
+}
+
+.input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #fff;
+    
+    &::placeholder {
+        color: #dee2e6;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    font-size: 18px;
+    background-color: #868e96;
+    color: #fff;
+    
+    &:hover {
+        background-color: #adb5bd;
+    }
+}

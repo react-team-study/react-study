@@ -1,0 +1,58 @@
+@charset "utf-8";
+@import '../scss/utils';
+
+.list {
+    background-color: #fff;
+}
+
+.item {
+    display: flex;
+    padding: 20px 10px;
+    
+    & + & {
+        border-top: 1px solid #dee2e6;
+    }
+    
+    &:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+}
+
+.text {
+    @include ellipsis;
+    
+    flex-grow: 1;
+    align-self: center;
+    padding-right: 15px;
+    font-size: 18px;
+}
+
+.button_checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.button_remove {
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    padding: 10px 20px;
+    color: #ff6b6b;
+    
+    &:hover {
+        color: #ff8787;
+    }
+}
+
+.is_complete {
+    &.button_checkbox {
+        color: #22b8cf;
+    }
+    
+    &.text {
+        color: #adb5bd;
+        text-decoration: line-through;
+    }
+}

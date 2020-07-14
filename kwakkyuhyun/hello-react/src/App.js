@@ -13,9 +13,7 @@ class App extends Component {
     render() {
         return (
             <>
-                <TodoTemplate>
-                    
-                </TodoTemplate>
+                <TodoTemplate />
             </>
         )
     }
