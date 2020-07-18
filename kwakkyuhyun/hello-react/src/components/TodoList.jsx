@@ -5,12 +5,11 @@ import TodoListItem from './TodoListItem';
 const TodoList = ({ todos, onRemove, onToggle }) => {
     return (
         <ul className={styles.list}>
-            {todos.map((items, index) => {
+            {todos.map(items => {
                 return (
                     <TodoListItem
-                        key={`todo-item-${index}`}
+                        key={`todo-item-${items.id}`}
                         items={items}
-                        index={index}
                         onRemove={onRemove}
                         onToggle={onToggle}
                     />

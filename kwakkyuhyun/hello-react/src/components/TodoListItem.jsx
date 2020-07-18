@@ -3,23 +3,24 @@ import { MdCheckBoxOutlineBlank, MdCheckBox, MdRemoveCircleOutline } from 'react
 import classnames from 'classnames';
 import styles from './TodoListItem.scss';
 
-const TodoListItem = ({ items, index, onToggle, onRemove }) => {
+const TodoListItem = ({ items, onToggle, onRemove }) => {
+    const { id, text, complete } = items;
     return (
         <li className={styles.item}>
             <button
                 type="button"
-                className={classnames(styles.button_checkbox, items.complete && styles.is_complete)}
-                onClick={() => onToggle(index)}
+                className={classnames(styles.button_checkbox, complete && styles.is_complete)}
+                onClick={() => onToggle(id)}
             >
-                    {items.complete
+                    {complete
                         ? <MdCheckBox />
                         : <MdCheckBoxOutlineBlank />
                     }
             </button>
-            <p className={classnames(styles.text, items.complete && styles.is_complete)}>
-                {items.text}
+            <p className={classnames(styles.text, complete && styles.is_complete)}>
+                {text}
             </p>
-            <button type="button" className={styles.button_remove} onClick={() => onRemove(index)}>
+            <button type="button" className={styles.button_remove} onClick={() => onRemove(id)}>
                 <MdRemoveCircleOutline />
             </button>
         </li>
