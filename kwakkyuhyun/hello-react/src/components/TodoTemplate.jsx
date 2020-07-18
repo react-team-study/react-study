@@ -1,4 +1,5 @@
 import React, { useCallback, useState, useRef } from 'react';
+// import produce from 'immer';
 import TodoInsert from './TodoInsert';
 import styles from './TodoTemplate.scss';
 import TodoList from './TodoList';
@@ -40,24 +41,35 @@ const TodoTemplate = () => {
         const todo = {
             id: nextId.current,
             text,
-            checked: false,
+            complete: false,
         };
+        
         setTodos(todos => todos.concat(todo));
+        // setTodos(
+        //     produce(draft => {
+        //         draft.push(todo);
+        //     })
+        // );
         nextId.current += 1;
         // dispatch({ type: 'INSERT', todo: todo });
     }, []);
     
     const onRemove = useCallback(idx => {
         setTodos(todos => todos.filter(todo => todo.id !== idx));
+        // setTodos(
+        //     produce(draft => {
+        //         draft.splice(draft.findIndex(info => info.id === idx), 1);
+        //     })
+        // );
         // dispatch({ type: 'REMOVE', idx: idx });
     }, []);
     
     const onToggle = useCallback(idx => {
         setTodos(todos => 
-                todos.map(todo =>
-                    todo.id === idx ? { ...todo, complete: !todo.complete } : todo
-                )
-            );
+            todos.map(todo =>
+                todo.id === idx ? { ...todo, complete: !todo.complete } : todo
+            )
+        );
         // dispatch({ type: 'TOGGLE', idx: idx });
     }, []);
     
