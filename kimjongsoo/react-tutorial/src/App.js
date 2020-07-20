@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState } from 'react';
 
 // import Sample from "./chapter3/Sample";
 // import Counter from "./chapter3/Counter";
@@ -19,27 +19,32 @@ import React, { Component, useState } from "react";
 // import InfoUserReducer from "./chapter8/InfoUserReducer";
 // import Average from "./chapter8/Average";
 // import AverageUseMemo from "./chapter8/AverageUseMemo";
-import AverageUseRef from "./chapter8/AverageUseRef";
-import AverageUseCallback from "./chapter8/AverageUseCallback";
-import InfoCustomHook from "./chapter8/InfoCustomHook";
-import SassComponent from "./chapter9/SassComponent";
-import CSSModule from "./chapter9/CSSModule";
-import StyledComponent from "./chapter9/StyledComponent";
+// import AverageUseRef from './chapter8/AverageUseRef';
+// import AverageUseCallback from './chapter8/AverageUseCallback';
+// import InfoCustomHook from './chapter8/InfoCustomHook';
+// import SassComponent from './chapter9/SassComponent';
+// import CSSModule from './chapter9/CSSModule';
+// import StyledComponent from './chapter9/StyledComponent';
+import TodoApp from './chapter10/TodoApp';
 
 const App = () => {
-  const [visible, setVisible] = useState(false);
-
+  // const [visible, setVisible] = useState(false);
+  // return (
+  //   <div>
+  //     <button
+  //       onClick={() => {
+  //         setVisible(!visible);
+  //       }}
+  //     >
+  //       {visible ? '숨기기' : '보이기'}
+  //     </button>
+  //     <hr />
+  //     {visible && <SassComponent />}
+  //   </div>
+  // );
   return (
     <div>
-      <button
-        onClick={() => {
-          setVisible(!visible);
-        }}
-      >
-        {visible ? "숨기기" : "보이기"}
-      </button>
-      <hr />
-      {visible && <StyledComponent />}
+      <TodoApp />
     </div>
   );
 };
@@ -51,7 +56,7 @@ const App = () => {
 // }
 
 function getRandomColor() {
-  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
 }
 
 // class App extends Component {
