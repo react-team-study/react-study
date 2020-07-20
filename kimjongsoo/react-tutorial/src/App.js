@@ -22,6 +22,9 @@ import React, { Component, useState } from "react";
 import AverageUseRef from "./chapter8/AverageUseRef";
 import AverageUseCallback from "./chapter8/AverageUseCallback";
 import InfoCustomHook from "./chapter8/InfoCustomHook";
+import SassComponent from "./chapter9/SassComponent";
+import CSSModule from "./chapter9/CSSModule";
+import StyledComponent from "./chapter9/StyledComponent";
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -36,7 +39,7 @@ const App = () => {
         {visible ? "숨기기" : "보이기"}
       </button>
       <hr />
-      {visible && <InfoCustomHook />}
+      {visible && <StyledComponent />}
     </div>
   );
 };
