@@ -1,19 +1,34 @@
 import React, { Component, useState } from 'react';
-import NewsApp from './chapter14/NewsApp';
-import NewsAppUsedRoute from './chapter14/NewsAppUsedRoute';
+import ColorBox from './chapter15/components/ColorBox';
+// import ColorContext from './chapter15/contexts/color';
+import { ColorProvider } from './chapter15/contexts/color';
+import SelectColors from './chapter15/components/SelectColors';
+import ColorBoxUsedHook from './chapter15/components/ColorBoxUsedHook';
+import SelectColorsUsedStaticCtxType from './chapter15/components/SelectColorsUsedStaticCtxType';
 
+// const App = () => {
+//   return (
+//     <div>
+//       <ColorBox />
+//     </div>
+//   );
+// };
+/**
+ * chapter15 context api
+ */
 const App = () => {
   return (
-    <div>
-      {/* <TodoApp /> */}
-      {/* <RouteApp /> */}
-
-      {/* <NewsApp /> */}
-      <NewsAppUsedRoute />
-    </div>
+    // <ColorContext.Provider value={{ color: 'red' }}>
+    <ColorProvider>
+      <div>
+        {/* <SelectColors /> */}
+        <SelectColorsUsedStaticCtxType />
+        <ColorBoxUsedHook />
+      </div>
+    </ColorProvider>
+    // </ColorContext.Provider>
   );
 };
-
 /**
  * class component
  */
