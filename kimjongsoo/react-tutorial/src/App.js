@@ -1,11 +1,15 @@
 import React, { Component, useState } from 'react';
-import RouteApp from './chapter13/RouteApp';
+import NewsApp from './chapter14/NewsApp';
+import NewsAppUsedRoute from './chapter14/NewsAppUsedRoute';
 
 const App = () => {
   return (
     <div>
       {/* <TodoApp /> */}
-      <RouteApp />
+      {/* <RouteApp /> */}
+
+      {/* <NewsApp /> */}
+      <NewsAppUsedRoute />
     </div>
   );
 };

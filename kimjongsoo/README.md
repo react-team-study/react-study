@@ -26,7 +26,7 @@
 
 ## 4주차            
 13장 리액트 라우터로 SPA 개발하기 :white_check_mark:        
-14장 외부 API를 연동하여 뉴스 뷰어 만들기    
+14장 외부 API를 연동하여 뉴스 뷰어 만들기  :white_check_mark:       
 15장 Context API    
 16장 리덕스 라이브러리 이해하기    
 ## 5주차     
