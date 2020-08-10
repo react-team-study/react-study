@@ -1,10 +1,5 @@
 import React, { Component, useState } from 'react';
-import ColorBox from './chapter15/components/ColorBox';
-// import ColorContext from './chapter15/contexts/color';
-import { ColorProvider } from './chapter15/contexts/color';
-import SelectColors from './chapter15/components/SelectColors';
-import ColorBoxUsedHook from './chapter15/components/ColorBoxUsedHook';
-import SelectColorsUsedStaticCtxType from './chapter15/components/SelectColorsUsedStaticCtxType';
+import ReduxApp from './chapter17/ReduxApp';
 
 // const App = () => {
 //   return (
@@ -19,13 +14,14 @@ import SelectColorsUsedStaticCtxType from './chapter15/components/SelectColorsUs
 const App = () => {
   return (
     // <ColorContext.Provider value={{ color: 'red' }}>
-    <ColorProvider>
-      <div>
-        {/* <SelectColors /> */}
-        <SelectColorsUsedStaticCtxType />
-        <ColorBoxUsedHook />
-      </div>
-    </ColorProvider>
+    // <ColorProvider>
+    <div>
+      {/* <SelectColors /> */}
+      {/* <SelectColorsUsedStaticCtxType /> */}
+      {/* <ColorBoxUsedHook /> */}
+      <ReduxApp />
+    </div>
+    // </ColorProvider>
     // </ColorContext.Provider>
   );
 };
