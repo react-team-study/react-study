@@ -4,6 +4,7 @@ import TodosContainer from './containers/TodosContainer';
 import CounterContainer from './containers/CounterContainer';
 import TodosContainerInUseActions from './containers/TodosContainerInUseActions';
 import CounterCiontainerInHook from './containers/CounterContainerInHook';
+import TodosContainerInHook from './containers/TodosContainerInHook';
 
 const ReduxApp = () => {
   return (
@@ -11,8 +12,9 @@ const ReduxApp = () => {
       {/* <CounterContainer /> */}
       <CounterCiontainerInHook />
       <hr />
-      {/* <TodosContainer /> */}
-      <TodosContainerInUseActions />
+      <TodosContainer />
+      {/* <TodosContainerInHook /> */}
+      {/* <TodosContainerInUseActions /> */}
     </div>
   );
 };
