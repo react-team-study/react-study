@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import ReduxApp from './chapter17/ReduxApp';
+import AsyncApp from './chapter18/AsyncApp';
 
 // const App = () => {
 //   return (
@@ -16,10 +16,7 @@ const App = () => {
     // <ColorContext.Provider value={{ color: 'red' }}>
     // <ColorProvider>
     <div>
-      {/* <SelectColors /> */}
-      {/* <SelectColorsUsedStaticCtxType /> */}
-      {/* <ColorBoxUsedHook /> */}
-      <ReduxApp />
+      <AsyncApp />
     </div>
     // </ColorProvider>
     // </ColorContext.Provider>
