@@ -5,8 +5,8 @@ import {
   takeEvery,
   takeLatest,
   throttle,
+  select,
 } from 'redux-saga/effects';
-import { selector } from '../../../node_modules/postcss-selector-parser/postcss-selector-parser';
 
 // define Action Type
 const INCREASE = 'counter/INCREASE';
@@ -37,7 +37,7 @@ export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined);
 function* increaseSaga() {
   yield delay(1000);
   yield put(increase());
-  const number = yield selector((state) => state.counter);
+  const number = yield select((state) => state.counter);
   console.log(`현재 값은 ${number} 입니다.`);
 }
 

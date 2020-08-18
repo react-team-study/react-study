@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import AsyncApp from './chapter18/AsyncApp';
+import SplitApp from './chapter19/SplitApp';
 
 // const App = () => {
 //   return (
@@ -16,7 +17,7 @@ const App = () => {
     // <ColorContext.Provider value={{ color: 'red' }}>
     // <ColorProvider>
     <div>
-      <AsyncApp />
+      <SplitApp />
     </div>
     // </ColorProvider>
     // </ColorContext.Provider>
