@@ -1,0 +1,28 @@
+@charset 'utf-8';
+@import '../utils';
+
+.wrap {
+    display: flex;
+        
+    & + & {
+        margin-top: 3rem;
+    }
+}
+
+.thumbnail {
+    margin-right: 1rem;
+}
+
+.image {
+    display: block;
+    width: 160px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.desc {
+    margin: 0;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    white-space: normal;
+}

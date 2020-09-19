@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styles from '../scss/components/Categories.scss';
+import { NavLink } from 'react-router-dom';
 
 const categories = [
     {
@@ -32,60 +33,28 @@ const categories = [
     },
 ];
 
-const CategoriesBlock = styled.div`
-    display: flex;
-    padding: 1rem;
-    width: 768px;
-    margin: 0 auto;
-    
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        overflow-x: auto;
-    }
-`;
-
-const Category = styled.div`
-    font-size: 1.125rem;
-    cursor: pointer;
-    white-space: pre;
-    text-decoration: none;
-    color: inherit;
-    padding-bottom: 0.25rem;
-    
-    &:hover {
-        color: #495057;
-    }
-    
-    ${props =>
-        props.active && css`
-            font-weight: 600;
-            border-bottom: 2px solid #22b8cf;
-            color: #22b8cf;
-            
-            &:hover {
-                color: #3bc9db;
-            }
-        `
-    }
-    
-    & + & {
-        margin-left: 1rem;
-    }
-`;
-
-const Categories = ({ onSelect, category }) => {
+const Categories = () => {
     return (
-        <CategoriesBlock>
-            {categories.map(c => (
-                <Category
-                    key={c.name}
-                    active={category === c.name}
-                    onClick={() => onSelect(c.name)}
-                >
-                    {c.text}
-                </Category>
-            ))}
-        </CategoriesBlock>
+        <>
+            <h1 className="blind">뉴스</h1>
+            <ul className={styles.list}>
+                {categories.map(c => (
+                    <li
+                        className={styles.item}
+                        key={c.name}
+                    >
+                        <NavLink
+                            className={styles.button}
+                            activeClassName={styles.active}
+                            exact={c.name === 'all'}
+                            to={c.name === 'all' ? '/' : `/${c.name}`}
+                        >
+                            {c.text}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
+        </>
     );
 };
 
