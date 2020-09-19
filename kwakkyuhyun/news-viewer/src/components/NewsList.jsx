@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NewsItem from './NewsItem';
-import styled from 'styled-components';
+import styles from '../scss/components/NewsList.scss';
 import axios from 'axios';
-
-const NewsListBlock = styled.div`
-    box-sizing: border-box;
-    width: 768px;
-    margin: 2rem auto 3rem;
-    
-    @media screen and (max-width: 768px) {
-        width: 100%;
-        padding: 0 1rem;
-    }
-`;
 
 const NewsList = ({ category }) => {
     const [ articles, setArticles ] = useState(null);
@@ -35,7 +24,7 @@ const NewsList = ({ category }) => {
     }, [category]);
     
     if(loading) {
-        return <NewsListBlock>대기 중...</NewsListBlock>;
+        return <div className={styles.wrap}>대기 중...</div>;
     }
     
     if(!articles) {
@@ -43,11 +32,11 @@ const NewsList = ({ category }) => {
     }
     
     return (
-        <NewsListBlock>
+        <div className={styles.wrap}>
             {articles.map(article => (
                 <NewsItem key={article.url} article={article} />
             ))}
-        </NewsListBlock>
+        </div>
     );
 };
 
