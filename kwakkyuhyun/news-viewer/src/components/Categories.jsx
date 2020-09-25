@@ -37,23 +37,25 @@ const Categories = () => {
     return (
         <>
             <h1 className="blind">뉴스</h1>
-            <ul className={styles.list}>
-                {categories.map(c => (
-                    <li
-                        className={styles.item}
-                        key={c.name}
-                    >
-                        <NavLink
-                            className={styles.button}
-                            activeClassName={styles.active}
-                            exact={c.name === 'all'}
-                            to={c.name === 'all' ? '/' : `/${c.name}`}
+            <div className={styles.tab}>
+                <ul className={styles.list}>
+                    {categories.map(c => (
+                        <li
+                            className={styles.item}
+                            key={c.name}
                         >
-                            {c.text}
-                        </NavLink>
-                    </li>
-                ))}
-            </ul>
+                            <NavLink
+                                className={styles.button}
+                                activeClassName={styles.active}
+                                exact={c.name === 'all'}
+                                to={c.name === 'all' ? '/' : `/${c.name}`}
+                            >
+                                {c.text}
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </>
     );
 };

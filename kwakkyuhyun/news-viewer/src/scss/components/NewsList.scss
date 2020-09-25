@@ -3,11 +3,11 @@
 
 .wrap {
     width: 100%;
-    padding: 0 1rem;
+    padding: 55px 1rem 0;
     
     @include media(tablet) {
         box-sizing: border-box;
         width: 768px;
-        margin: 2rem auto 3rem;
+        margin: 0 auto;
     }
 }
