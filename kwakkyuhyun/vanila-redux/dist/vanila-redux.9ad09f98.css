@@ -1,0 +1,14 @@
+.toggle {
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    border: 2px solid #000;
+}
+
+.toggle.active {
+    background-color: yellow;
+}
+
+
+/*# sourceMappingURL=/vanila-redux.9ad09f98.css.map */
