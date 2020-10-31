@@ -9,25 +9,25 @@ import { createStore, applyMiddleware } from "redux";
 import PreloadContext from "./lib/PreloadContext";
 import thunk from "redux-thunk";
 import createSagaMiddleware, { END } from "redux-saga";
-import rootReducer, { rootSaga } from "./modules/index";
+import rootReducer, { rootSaga } from "./modules";
 import { Provider } from "react-redux";
 import { ChunkExtractor, ChunkExtractorManager } from "@loadable/server";
 
+// asset-manifest.json에서 파일 경로들을 조회합니다.
 const statsFile = path.resolve("./build/loadable-stats.json");
 
 const html = ReactDOMServer.renderToString(
   <div>Hello Server Side Rendering!</div>
 );
 
-// asset-manifest.json에서 파일 경로들을 조회합니다.
 const manifest = JSON.parse(
   fs.readFileSync(path.resolve("./build/asset-manifest.json"), "utf8")
 );
 
-const chunks = Object.keys(manifest.files)
-  .filter((key) => /chunk\.js$/.exec(key)) // chunk.js로 끝나는 키를 찾아서
-  .map((key) => `<script src="${manifest.files[key]}"></script>`) // 스크립트 태그로 변환하고
-  .join(""); // 합침
+// const chunks = Object.keys(manifest.files)
+//   .filter((key) => /chunk\.js$/.exec(key)) // chunk.js로 끝나는 키를 찾아서
+//   .map((key) => `<script src="${manifest.files[key]}"></script>`) // 스크립트 태그로 변환하고
+//   .join(""); // 합침
 
 function createPage(root, tags) {
   return `<!DOCTYPE html>
@@ -50,9 +50,6 @@ function createPage(root, tags) {
         ${root}
       </div>
       ${tags.scripts}
-      <script src="${manifest.files["runtime-main.js"]}"></script>
-      ${chunks}
-      <script src="${manifest.files["main.js"]}"></script>
     </body>
     </html>
       `;
@@ -91,34 +88,31 @@ const serverRender = async (req, res, next) => {
     </ChunkExtractorManager>
   );
 
-  ReactDOMServer.renderToStaticMarkup(jsx);
-
-  store.dispatch(END);
-
-  store.dispatch(END);
-
+  ReactDOMServer.renderToStaticMarkup(jsx); // renderToStaticMarkup 으로 한번 렌더링합니다.
+  store.dispatch(END); // redux-saga 의 END 액션을 발생시키면 액션을 모니터링하는 saga 들이 모두 종료됩니다.
   try {
-    await sagaPromise;
-    await Promise.all(preloadContext.promises);
+    await sagaPromise; // 기존에 진행중이던 saga 들이 모두 끝날때까지 기다립니다.
+    await Promise.all(preloadContext.promises); // 모든 프로미스를 기다립니다.
   } catch (e) {
     return res.status(500);
   }
 
   preloadContext.done = true;
-  const root = ReactDOMServer.renderToString(jsx);
-
+  const root = ReactDOMServer.renderToString(jsx); // 렌더링을 합니다.
   // JSON 을 문자열로 변환하고 악성스크립트가 실행되는것을 방지하기 위해서 < 를 치환처리
   // https://redux.js.org/recipes/server-rendering#security-considerations
   const stateString = JSON.stringify(store.getState()).replace(/</g, "\\u003c");
   const stateScript = `<script>__PRELOADED_STATE__ = ${stateString}</script>`; // 리덕스 초기 상태를 스크립트로 주입합니다.
 
+  // 미리 불러와야 하는 스타일 / 스크립트를 추출하고
   const tags = {
-    scripts: stateScript + extractor.getScriptTags(),
+    scripts: stateScript + extractor.getScriptTags(), // 스크립트 앞부분에 리덕스 상태 넣기
     links: extractor.getLinkTags(),
     styles: extractor.getStyleTags(),
   };
 
-  res.send(createPage(root, stateScript)); // 클라이언트에게 결과물을 응답합니다.
+  // res.send(createPage(root, stateScript)); // 클라이언트에게 결과물을 응답합니다.
+  res.send(createPage(root, tags));
 };
 
 const serve = express.static(path.resolve("./build"), {
@@ -132,5 +126,3 @@ app.use(serverRender);
 app.listen(5000, () => {
   console.log("Running on http://localhost:5000");
 });
-
-console.log(html);
